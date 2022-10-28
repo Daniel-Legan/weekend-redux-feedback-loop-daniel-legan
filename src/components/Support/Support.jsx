@@ -27,6 +27,7 @@ function Support() {
                     type="number"
                     onChange={evt => setNewSupport(evt.target.value)}
                     value={newSupport}
+                    required
                 />
                 <button type="submit">NEXT</button>
             </form>

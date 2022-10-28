@@ -27,6 +27,7 @@ function Understanding() {
                     type="number"
                     onChange={evt => setNewUnderstanding(evt.target.value)}
                     value={newUnderstanding}
+                    required
                 />
                 <button type="submit">NEXT</button>
             </form>

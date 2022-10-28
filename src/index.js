@@ -28,13 +28,21 @@ const support = (state = '', action) => {
     return state;
 }
 
+const comments = (state = '', action) => {
+    if (action.type === 'COMMENT_DATA') {
+        return action.payload;
+    }
+    return state;
+}
+
 
 
 const storeInstance = createStore(
     combineReducers({
         feeling,
         understanding,
-        support
+        support,
+        comments
     }),
     applyMiddleware(logger)
 );

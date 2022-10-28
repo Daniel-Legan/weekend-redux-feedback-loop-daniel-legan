@@ -1,14 +1,34 @@
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useHistory } from "react-router-dom";
 
 function Comments() {
+    const dispatch = useDispatch();
+    const history = useHistory();
+
+    const [newComment, setNewComment] = useState('');
+
+    const handleSubmit = (evt) => {
+        evt.preventDefault();
+
+        dispatch({
+            type: 'COMMENT_DATA',
+            payload: newComment
+        });
+
+        history.push('/review');
+    }
+
     return (
         <>
             <h1>ARE THERE ANY COMMENTS YOU WOULD LIKE TO ADD?</h1>
-            <form>
-                <input type="text" />
-                <Link to="/review">
-                    <button type="submit">NEXT</button>
-                </Link>
+            <form onSubmit={handleSubmit}>
+                <input
+                    type="text"
+                    onChange={evt => setNewComment(evt.target.value)}
+                    value={newComment}
+                />
+                <button type="submit">NEXT</button>
             </form>
         </>
     );
