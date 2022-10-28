@@ -5,7 +5,7 @@ function Review() {
         <>
             <h1>REVIEW!</h1>
             <Link to="/success">
-                <button>NEXT</button>
+                <button type="submit">SUBMIT</button>
             </Link>
         </>
     );

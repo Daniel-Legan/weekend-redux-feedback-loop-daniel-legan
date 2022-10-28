@@ -1,12 +1,35 @@
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useHistory } from "react-router-dom";
 
 function Feeling() {
+    const dispatch = useDispatch();
+    const history = useHistory();
+
+    const [newFeeling, setNewFeeling] = useState('');
+
+    const handleSubmit = (evt) => {
+        evt.preventDefault();
+
+        dispatch({
+            type: 'FEELING_DATA',
+            payload: newFeeling
+        });
+
+        history.push('/understanding');
+    }
+
     return (
         <>
             <h1>HOW ARE YOU FEELING?</h1>
-            <Link to="/understanding">
-                <button>START</button>
-            </Link>
+            <form onSubmit={handleSubmit}>
+                <input
+                    type="text"
+                    onChange={evt => setNewFeeling(evt.target.value)}
+                    value={newFeeling}
+                />
+                <button type="submit">NEXT</button>
+            </form>
         </>
     );
 }
