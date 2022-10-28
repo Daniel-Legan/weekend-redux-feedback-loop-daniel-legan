@@ -24,7 +24,7 @@ function Feeling() {
             <h1>HOW ARE YOU FEELING?</h1>
             <form onSubmit={handleSubmit}>
                 <input
-                    type="text"
+                    type="number"
                     onChange={evt => setNewFeeling(evt.target.value)}
                     value={newFeeling}
                 />

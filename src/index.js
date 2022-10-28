@@ -14,11 +14,27 @@ const feeling = (state = '', action) => {
     return state;
 }
 
+const understanding = (state = '', action) => {
+    if (action.type === 'UNDERSTANDING_DATA') {
+        return action.payload;
+    }
+    return state;
+}
+
+const support = (state = '', action) => {
+    if (action.type === 'SUPPORT_DATA') {
+        return action.payload;
+    }
+    return state;
+}
+
 
 
 const storeInstance = createStore(
     combineReducers({
-        feeling
+        feeling,
+        understanding,
+        support
     }),
     applyMiddleware(logger)
 );
