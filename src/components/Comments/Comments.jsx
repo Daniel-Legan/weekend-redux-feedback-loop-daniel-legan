@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from "react-router-dom";
 import { Link } from 'react-router-dom';
+import Header from '../Header/Header';
 
 function Comments() {
     const dispatch = useDispatch();
@@ -22,6 +23,7 @@ function Comments() {
 
     return (
         <>
+            <Header />
             <h1>Any comments you want to leave?</h1>
             <form onSubmit={handleSubmit}>
                 <input

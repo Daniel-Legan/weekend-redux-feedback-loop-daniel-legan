@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from "react-router-dom";
 import { Link } from 'react-router-dom';
+import Header from '../Header/Header';
 
 function Understanding() {
     const dispatch = useDispatch();
@@ -22,6 +23,7 @@ function Understanding() {
 
     return (
         <>
+            <Header />
             <h1>How well are you understanding the content?</h1>
             <form onSubmit={handleSubmit}>
                 <input

@@ -8,34 +8,44 @@ import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 
 const feeling = (state = '', action) => {
-    if (action.type === 'FEELING_DATA') {
-        return action.payload;
+    switch (action.type) {
+        case 'FEELING_DATA':
+            return action.payload;
+        case 'RESET':
+            return '';
     }
     return state;
 }
 
 const understanding = (state = '', action) => {
-    if (action.type === 'UNDERSTANDING_DATA') {
-        return action.payload;
+    switch (action.type) {
+        case 'UNDERSTANDING_DATA':
+            return action.payload;
+        case 'RESET':
+            return '';
     }
     return state;
 }
 
 const support = (state = '', action) => {
-    if (action.type === 'SUPPORT_DATA') {
-        return action.payload;
+    switch (action.type) {
+        case 'SUPPORT_DATA':
+            return action.payload;
+        case 'RESET':
+            return '';
     }
     return state;
 }
 
 const comments = (state = '', action) => {
-    if (action.type === 'COMMENT_DATA') {
-        return action.payload;
+    switch (action.type) {
+        case 'COMMENT_DATA':
+            return action.payload;
+        case 'RESET':
+            return '';
     }
     return state;
 }
-
-
 
 const storeInstance = createStore(
     combineReducers({

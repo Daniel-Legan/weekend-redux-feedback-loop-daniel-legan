@@ -5,6 +5,7 @@ import axios from 'axios';
 
 function Review() {
     const history = useHistory();
+    const dispatch = useDispatch();
 
     const feeling = useSelector(store => store.feeling);
     const understanding = useSelector(store => store.understanding);
@@ -34,6 +35,15 @@ function Review() {
             });
     };
 
+    const handleReset = () => {
+        console.log('in handleReset');
+        dispatch({
+            type: 'RESET'
+        });
+
+        history.push('/');
+    };
+
     return (
         <>
             <h2>Review Your Feedback</h2>
@@ -42,6 +52,11 @@ function Review() {
             <h3>Support: {support}</h3>
             <h3>Comment: {comments}</h3>
             <button onClick={(evt) => handleFeedback(evt)}>SUBMIT</button>
+            {/* todo: update global state instead of link to home */}
+            <Link to='/comments'>
+                <button>BACK</button>
+            </Link>
+                <button onClick={handleReset}>RESET</button>
         </>
     );
 }

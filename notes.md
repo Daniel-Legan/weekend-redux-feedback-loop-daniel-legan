@@ -1,7 +1,7 @@
 on refresh, state is lost
 
-need to axios POST each form submission to server
+on admin, axios GET each from database
 
-on review, axios GET each form submission
+[X] onSubmit, axios POST to server, query to database
 
-onSubmit, axios POST to server, query to database
+use useEffect to show what is in the store when going
