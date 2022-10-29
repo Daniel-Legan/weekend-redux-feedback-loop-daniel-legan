@@ -14,9 +14,10 @@ function Review() {
 
 
     const feedback = {
-        feeling: feeling,
-        understanding: understanding,
-        support: support,
+        // Number() not necessary, but good for understanding data types going to the database
+        feeling: Number(feeling),
+        understanding: Number(understanding),
+        support: Number(support),
         comments: comments
     }
 
@@ -28,6 +29,7 @@ function Review() {
         })
             .then((response) => {
                 console.log('POST /feedback', response);
+                // if post was successful, go to success page
                 history.push('/success');
             })
             .catch((err) => {
@@ -36,6 +38,7 @@ function Review() {
     };
 
     const handleReset = () => {
+        // resets all the global state reducers to the initial state
         console.log('in handleReset');
         dispatch({
             type: 'RESET'
@@ -56,7 +59,7 @@ function Review() {
             <Link to='/comments'>
                 <button>BACK</button>
             </Link>
-                <button onClick={handleReset}>RESET</button>
+            <button onClick={handleReset}>RESET</button>
         </>
     );
 }
