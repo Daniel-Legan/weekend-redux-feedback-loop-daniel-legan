@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 function Comments() {
     const dispatch = useDispatch();
@@ -29,6 +30,9 @@ function Comments() {
                     value={newComment}
                 />
                 <button type="submit">NEXT</button>
+                <Link to='/support'>
+                    <button>BACK</button>
+                </Link>
             </form>
         </>
     );

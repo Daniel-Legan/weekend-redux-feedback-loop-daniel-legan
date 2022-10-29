@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 function Understanding() {
     const dispatch = useDispatch();
@@ -30,6 +31,9 @@ function Understanding() {
                     required
                 />
                 <button type="submit">NEXT</button>
+                <Link to='/'>
+                    <button>BACK</button>
+                </Link>
             </form>
         </>
     );
