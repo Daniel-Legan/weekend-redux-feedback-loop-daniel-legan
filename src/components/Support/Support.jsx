@@ -26,12 +26,23 @@ function Support() {
             <Header />
             <h1>How well are you being supported?</h1>
             <form onSubmit={handleSubmit}>
-                <input
+                {/* <input
                     type="number"
                     onChange={evt => setNewSupport(evt.target.value)}
                     value={newSupport}
                     required
-                />
+                /> */}
+                <input type="radio" name="question" id="1" onChange={() => setNewSupport('1')} required />
+                <label htmlFor="one">1</label>
+                <input type="radio" name="question" id="2" onChange={() => setNewSupport('2')} required />
+                <label htmlFor="one">2</label>
+                <input type="radio" name="question" id="3" onChange={() => setNewSupport('3')} required />
+                <label htmlFor="one">3</label>
+                <input type="radio" name="question" id="4" onChange={() => setNewSupport('4')} required />
+                <label htmlFor="one">4</label>
+                <input type="radio" name="question" id="5" onChange={() => setNewSupport('5')} required />
+                <label htmlFor="one">5</label>
+
                 <button type="submit">NEXT</button>
                 <Link to='/understanding'>
                     <button>BACK</button>
