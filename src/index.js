@@ -47,12 +47,20 @@ const comments = (state = '', action) => {
     return state;
 }
 
+const feedback = (state = [], action) => {
+    if (action.type === 'SET_FEEDBACK') {
+        return action.payload;
+    }
+    return state;
+}
+
 const storeInstance = createStore(
     combineReducers({
         feeling,
         understanding,
         support,
         comments,
+        feedback
     }),
     applyMiddleware(logger)
 );

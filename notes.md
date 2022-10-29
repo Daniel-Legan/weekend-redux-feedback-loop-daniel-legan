@@ -1,6 +1,6 @@
 on refresh, state is lost
 
-on admin, axios GET each from database
+[x] on admin, axios GET each from database
 
 [X] onSubmit, axios POST to server, query to database
 

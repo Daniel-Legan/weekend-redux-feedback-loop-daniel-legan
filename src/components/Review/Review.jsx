@@ -29,6 +29,10 @@ function Review() {
         })
             .then((response) => {
                 console.log('POST /feedback', response);
+                // resets all the global state reducers to the initial state
+                dispatch({
+                    type: 'RESET'
+                });
                 // if post was successful, go to success page
                 history.push('/success');
             })
@@ -39,11 +43,9 @@ function Review() {
 
     const handleReset = () => {
         // resets all the global state reducers to the initial state
-        console.log('in handleReset');
         dispatch({
             type: 'RESET'
         });
-
         history.push('/');
     };
 
