@@ -36,10 +36,11 @@ function Review() {
 
     return (
         <>
-            <h2>Feeling: {feeling}</h2>
-            <h2>Understanding: {understanding}</h2>
-            <h2>Support: {support}</h2>
-            <h2>Comment: {comments}</h2>
+            <h2>Review Your Feedback</h2>
+            <h3>Feeling: {feeling}</h3>
+            <h3>Understanding: {understanding}</h3>
+            <h3>Support: {support}</h3>
+            <h3>Comment: {comments}</h3>
             <button onClick={(evt) => handleFeedback(evt)}>SUBMIT</button>
         </>
     );

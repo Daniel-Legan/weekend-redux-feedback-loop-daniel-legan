@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS "feedback" ;
+
 -- Database should be prime_feedback
 CREATE DATABASE "prime_feedback";
 

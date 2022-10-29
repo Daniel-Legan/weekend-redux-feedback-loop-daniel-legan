@@ -21,7 +21,7 @@ function Comments() {
 
     return (
         <>
-            <h1>ARE THERE ANY COMMENTS YOU WOULD LIKE TO ADD?</h1>
+            <h1>Any comments you want to leave?</h1>
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"

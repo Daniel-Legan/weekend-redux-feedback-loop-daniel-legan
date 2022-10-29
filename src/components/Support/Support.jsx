@@ -21,7 +21,7 @@ function Support() {
 
     return (
         <>
-            <h1>HOW WELL DID YOU FEEL SUPPORTED?</h1>
+            <h1>How well are you being supported?</h1>
             <form onSubmit={handleSubmit}>
                 <input
                     type="number"

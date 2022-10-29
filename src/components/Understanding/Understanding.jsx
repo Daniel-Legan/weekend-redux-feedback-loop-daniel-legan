@@ -21,7 +21,7 @@ function Understanding() {
 
     return (
         <>
-            <h1>HOW WELL DID YOU UNDERSTAND TODAY'S MATERIAL?</h1>
+            <h1>How well are you understanding the content?</h1>
             <form onSubmit={handleSubmit}>
                 <input
                     type="number"
