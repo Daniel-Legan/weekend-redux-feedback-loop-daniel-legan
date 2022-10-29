@@ -34,7 +34,7 @@ function Feeling() {
             <h1>How are you feeling today?</h1>
             <form onSubmit={handleSubmit}>
                 {/* name must match across all radio buttons to toggle between them */}
-                <input type="radio" name="question" id="1" onChange={() => setNewFeeling('1')} required/>
+                <input type="radio" name="question" id="1" onChange={() => setNewFeeling('1')} required />
                 <label htmlFor="one">1</label>
                 <input type="radio" name="question" id="2" onChange={() => setNewFeeling('2')} required />
                 <label htmlFor="two">2</label>
@@ -47,6 +47,7 @@ function Feeling() {
 
                 <button type="submit">NEXT</button>
             </form>
+            <div>Feeling Status: {feelingStatus}</div>
         </>
     );
 }

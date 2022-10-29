@@ -54,12 +54,17 @@ function Review() {
             <h3>Understanding: {understanding}</h3>
             <h3>Support: {support}</h3>
             <h3>Comment: {comments}</h3>
-            <button onClick={(evt) => handleFeedback(evt)}>SUBMIT</button>
-            {/* todo: update global state instead of link to home */}
-            <Link to='/comments'>
-                <button>BACK</button>
-            </Link>
-            <button onClick={handleReset}>RESET</button>
+            <div>
+                <button onClick={(evt) => handleFeedback(evt)}>SUBMIT</button>
+                {/* todo: update global state instead of link to home */}
+                <Link to='/comments'>
+                    <button>BACK</button>
+                </Link>
+            </div>
+            <br />
+            <div>
+                <button onClick={handleReset}>RESET SURVEY</button>
+            </div>
         </>
     );
 }

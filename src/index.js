@@ -52,7 +52,7 @@ const storeInstance = createStore(
         feeling,
         understanding,
         support,
-        comments
+        comments,
     }),
     applyMiddleware(logger)
 );
