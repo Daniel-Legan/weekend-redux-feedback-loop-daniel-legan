@@ -52,4 +52,24 @@ router.put('/flagged/:id', (req, res) => {
         })
 }); // End PUT Route
 
+// DELETE Route
+router.delete('/flagged/:id', (req, res) => {
+    console.log('in DELETE with id', req.params.id);
+    console.log(req.params); // { id: '#' }
+    const feedbackId = req.params.id;
+
+    const sqlText = `DELETE FROM "feedback" WHERE "id" = $1;`;
+    const sqlParams = [feedbackId];
+
+    pool.query(sqlText, sqlParams)
+        .then((databaseResult) => {
+            res.sendStatus(200);
+        })
+        .catch((err) => {
+            console.log('error in DELETE', err);
+
+            res.sendStatus(500);
+        })
+}); // End DELETE Route
+
 module.exports = router;

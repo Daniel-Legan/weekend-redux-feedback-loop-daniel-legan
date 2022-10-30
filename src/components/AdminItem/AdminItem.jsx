@@ -1,6 +1,6 @@
 
 
-function AdminItem({ updateFlagged, item }) {
+function AdminItem({ updateFlagged, deleteFeedback, item }) {
     return (
         <tr key={item.id}>
             <td>{item.feeling}</td>
@@ -12,7 +12,7 @@ function AdminItem({ updateFlagged, item }) {
                 <button onClick={() => { updateFlagged(item.id) }}>Toggle</button>
             </td>
             <td>
-                <button onClick={() => { deleteItem(item.id) }}>Delete</button>
+                <button onClick={() => { deleteFeedback(item.id) }}>Delete</button>
             </td>
         </tr>
     );

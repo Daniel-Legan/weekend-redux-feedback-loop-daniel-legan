@@ -10,6 +10,7 @@ function Admin() {
         fetchFeedback();
     }, []);
 
+    // GET
     const fetchFeedback = () => {
         axios({
             method: 'GET',
@@ -24,18 +25,34 @@ function Admin() {
             .catch(err => console.error('GET /feedback', err));
     };
 
+    // PUT (UPDATE)
     const updateFlagged = (id) => {
         console.log('in updateFlagged with id', id);
         axios.put(`/feedback/flagged/${id}`)
             .then(response => {
-                console.log('PUT response.data from server', response.data);
+                console.log('PUT response.data from server', response.data); // Ok
                 fetchFeedback();
             })
             .catch(err => {
                 console.log('PUT err from server', err);
             })
     };
-    
+
+    // DELETE
+    const deleteFeedback = (id) => {
+        axios({
+            method: 'DELETE',
+            url: `/feedback/flagged/${id}`
+        })
+            .then(response => {
+                console.log('DELETE response from server', response.data); // Ok
+                fetchFeedback()
+            })
+            .catch(err => {
+                console.log('DELETE err from server', err);
+            })
+    };
+
 
     const feedback = useSelector(store => store.feedback);
     console.log(feedback);
@@ -69,6 +86,7 @@ function Admin() {
                         key={item.id}
                         item={item}
                         updateFlagged={updateFlagged}
+                        deleteFeedback={deleteFeedback}
                     />
                 ))}
             </tbody>
