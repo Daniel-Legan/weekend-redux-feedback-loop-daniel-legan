@@ -120,10 +120,29 @@ input[type=radio] {
   margin-left: 0px;
 }
 
-#reviewSection {
-  margin-top: 20%;
+#successSection {
+  margin-top: 10%;
 }
 
 .reviewPageButtons {
   margin-left: 0px;
+}
+
+div.radio-box {
+  width: 50px;
+  display: inline-block;
+  margin: 5px;
+}
+
+.radio-box label {
+  margin-top: 10px;
+  display: block;
+  width: 50px;
+  text-align: center;
+}
+
+.radio-box input {
+  width: 20px;
+  display: block;
+  margin: 0px auto;
 }

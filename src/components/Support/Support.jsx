@@ -32,17 +32,26 @@ function Support() {
                     value={newSupport}
                     required
                 /> */}
-                <input type="radio" name="question" id="1" onChange={() => setNewSupport('1')} required />
-                <label htmlFor="one"><b>1</b></label>
-                <input type="radio" name="question" id="2" onChange={() => setNewSupport('2')} required />
-                <label htmlFor="two"><b>2</b></label>
-                <input type="radio" name="question" id="3" onChange={() => setNewSupport('3')} required />
-                <label htmlFor="three"><b>3</b></label>
-                <input type="radio" name="question" id="4" onChange={() => setNewSupport('4')} required />
-                <label htmlFor="four"><b>4</b></label>
-                <input type="radio" name="question" id="5" onChange={() => setNewSupport('5')} required />
-                <label htmlFor="five"><b>5</b></label>
-
+                <div className="radio-box">
+                    <input type="radio" name="question" id="1" onChange={() => setNewSupport('1')} required />
+                    <label htmlFor="two"><b>1</b></label>
+                </div>
+                <div className="radio-box">
+                    <input type="radio" name="question" id="2" onChange={() => setNewSupport('2')} required />
+                    <label htmlFor="two"><b>2</b></label>
+                </div>
+                <div className="radio-box">
+                    <input type="radio" name="question" id="3" onChange={() => setNewSupport('3')} required />
+                    <label htmlFor="three"><b>3</b></label>
+                </div>
+                <div className="radio-box">
+                    <input type="radio" name="question" id="4" onChange={() => setNewSupport('4')} required />
+                    <label htmlFor="four"><b>4</b></label>
+                </div>
+                <div className="radio-box">
+                    <input type="radio" name="question" id="5" onChange={() => setNewSupport('5')} required />
+                    <label htmlFor="five"><b>5</b></label>
+                </div>
                 <button type="submit">NEXT</button>
                 <Link to='/understanding'>
                     <button>BACK</button>

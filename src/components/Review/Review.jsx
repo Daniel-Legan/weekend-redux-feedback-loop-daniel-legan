@@ -60,14 +60,14 @@ function Review() {
                 <h3>Support: {support}</h3>
                 <h3>Comments: {comments}</h3>
                 <div>
-                    <button class="reviewPageButtons" onClick={(evt) => handleFeedback(evt)}>SUBMIT</button>
+                    <button className="reviewPageButtons" onClick={(evt) => handleFeedback(evt)}>SUBMIT</button>
                     <Link to='/comments'>
                         <button>BACK</button>
                     </Link>
                 </div>
                 <br />
                 <div>
-                    <button class="reviewPageButtons" onClick={handleReset}>RESET SURVEY</button>
+                    <button className="reviewPageButtons" onClick={handleReset}>RESET SURVEY</button>
                 </div>
             </section>
         </>
