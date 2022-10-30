@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
+import AdminItem from '../AdminItem/AdminItem';
 
 function Admin() {
     const dispatch = useDispatch();
@@ -23,6 +24,19 @@ function Admin() {
             .catch(err => console.error('GET /feedback', err));
     };
 
+    const updateFlagged = (id) => {
+        console.log('in updateFlagged with id', id);
+        axios.put(`/feedback/flagged/${id}`)
+            .then(response => {
+                console.log('PUT response.data from server', response.data);
+                fetchFeedback();
+            })
+            .catch(err => {
+                console.log('PUT err from server', err);
+            })
+    };
+    
+
     const feedback = useSelector(store => store.feedback);
     console.log(feedback);
 
@@ -35,11 +49,11 @@ function Admin() {
                     <th>Understanding</th>
                     <th>Support</th>
                     <th>Comments</th>
-                    <th>Flagged</th>
+                    <th>Review</th>
                 </tr>
             </thead>
             <tbody>
-                {feedback.map((item) => {
+                {/* {feedback.map((item) => {
                     return (
                         <tr key={item.id}>
                             <td>{item.feeling}</td>
@@ -49,7 +63,14 @@ function Admin() {
                             <td>{item.flagged}</td>
                         </tr>
                     )
-                })}
+                })} */}
+                {feedback.map(item => (
+                    <AdminItem
+                        key={item.id}
+                        item={item}
+                        updateFlagged={updateFlagged}
+                    />
+                ))}
             </tbody>
         </table>
     );
