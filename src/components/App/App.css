@@ -21,3 +21,14 @@
 h4 {
   font-style: italic;
 }
+
+table {
+  margin: 0 auto;
+  margin-top: 50px;
+  border: black solid;
+}
+
+th, tr, td {
+  border: black solid;
+  padding: 5px;
+}

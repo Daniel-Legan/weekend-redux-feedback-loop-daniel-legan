@@ -7,12 +7,9 @@ function AdminItem({ updateFlagged, deleteFeedback, item }) {
             <td>{item.understanding}</td>
             <td>{item.support}</td>
             <td>{item.comments}</td>
-            <td>{(item.flagged === true) ? 'review' : 'okay'}</td>
+            <td onClick={() => { updateFlagged(item.id) }}>{(item.flagged === true) ? 'needs review' : 'okay'}</td>
             <td>
-                <button onClick={() => { updateFlagged(item.id) }}>Toggle</button>
-            </td>
-            <td>
-                <button onClick={() => { deleteFeedback(item.id) }}>Delete</button>
+                <button onClick={() => { deleteFeedback(item.id) }}>X</button>
             </td>
         </tr>
     );
