@@ -27,6 +27,7 @@ function Comments() {
             <h1>Any comments you want to leave?</h1>
             <form onSubmit={handleSubmit}>
                 <input
+                    id="feedbackInput"
                     type="text"
                     onChange={evt => setNewComment(evt.target.value)}
                     value={newComment}

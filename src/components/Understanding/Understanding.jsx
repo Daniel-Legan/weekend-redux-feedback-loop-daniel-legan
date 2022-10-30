@@ -33,15 +33,15 @@ function Understanding() {
                     required
                 /> */}
                 <input type="radio" name="question" id="1" onChange={() => setNewUnderstanding('1')} required />
-                <label htmlFor="one">1</label>
+                <label htmlFor="one"><b>1</b></label>
                 <input type="radio" name="question" id="2" onChange={() => setNewUnderstanding('2')} required />
-                <label htmlFor="two">2</label>
+                <label htmlFor="two"><b>2</b></label>
                 <input type="radio" name="question" id="3" onChange={() => setNewUnderstanding('3')} required />
-                <label htmlFor="three">3</label>
+                <label htmlFor="three"><b>3</b></label>
                 <input type="radio" name="question" id="4" onChange={() => setNewUnderstanding('4')} required />
-                <label htmlFor="four">4</label>
+                <label htmlFor="four"><b>4</b></label>
                 <input type="radio" name="question" id="5" onChange={() => setNewUnderstanding('5')} required />
-                <label htmlFor="five">5</label>
+                <label htmlFor="five"><b>5</b></label>
 
                 <button type="submit">NEXT</button>
                 <Link to='/'>

@@ -1,5 +1,3 @@
-
-
 function AdminItem({ updateFlagged, deleteFeedback, item }) {
     return (
         <tr key={item.id}>
@@ -7,9 +5,13 @@ function AdminItem({ updateFlagged, deleteFeedback, item }) {
             <td>{item.understanding}</td>
             <td>{item.support}</td>
             <td>{item.comments}</td>
-            <td onClick={() => { updateFlagged(item.id) }}>{(item.flagged === true) ? 'needs review' : 'okay'}</td>
-            <td>
-                <button onClick={() => { deleteFeedback(item.id) }}>X</button>
+            <td className="review">
+                {/* renders checkbox with flagged boolean result from database */}
+                <input className="checkbox" defaultChecked={item.flagged} onClick={() => { updateFlagged(item.id) }} type="checkbox"></input>
+                <span className="checkmark"></span>
+            </td>
+            <td className="close">
+                <span onClick={() => { deleteFeedback(item.id) }}>{"\u00D7"}</span>
             </td>
         </tr>
     );

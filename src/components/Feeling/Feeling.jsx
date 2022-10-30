@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from "react-router-dom";
 import Header from '../Header/Header';
@@ -34,20 +34,23 @@ function Feeling() {
             <h1>How are you feeling today?</h1>
             <form onSubmit={handleSubmit}>
                 {/* name must match across all radio buttons to toggle between them */}
-                <input type="radio" name="question" id="1" onChange={() => setNewFeeling('1')} required />
-                <label htmlFor="one">1</label>
+                {/* should be structured like this on next two pages? */}
+                <label htmlFor="one">
+                    <input type="radio" name="question" id="1" onChange={() => setNewFeeling('1')} required />
+                    <b>1</b>
+                </label>
+                {/* <input type="radio" name="question" id="1" onChange={() => setNewFeeling('1')} required /> */}
                 <input type="radio" name="question" id="2" onChange={() => setNewFeeling('2')} required />
-                <label htmlFor="two">2</label>
+                <label htmlFor="two"><b>2</b></label>
                 <input type="radio" name="question" id="3" onChange={() => setNewFeeling('3')} required />
-                <label htmlFor="three">3</label>
+                <label htmlFor="three"><b>3</b></label>
                 <input type="radio" name="question" id="4" onChange={() => setNewFeeling('4')} required />
-                <label htmlFor="four">4</label>
+                <label htmlFor="four"><b>4</b></label>
                 <input type="radio" name="question" id="5" onChange={() => setNewFeeling('5')} required />
-                <label htmlFor="five">5</label>
+                <label htmlFor="five"><b>5</b></label>
 
                 <button type="submit">NEXT</button>
             </form>
-            <div>Feeling Status: {feelingStatus}</div>
         </>
     );
 }

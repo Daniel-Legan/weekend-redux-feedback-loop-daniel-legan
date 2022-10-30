@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 import AdminItem from '../AdminItem/AdminItem';
@@ -53,44 +53,35 @@ function Admin() {
             })
     };
 
-
     const feedback = useSelector(store => store.feedback);
     console.log(feedback);
-
-    // todo: break feedback into feedbackList and feedbackItem and add conditional rendering to each item
     return (
-        <table className='table'>
-            <thead>
-                <tr>
-                    <th>Feeling</th>
-                    <th>Understanding</th>
-                    <th>Support</th>
-                    <th>Comments</th>
-                    <th>Review</th>
-                </tr>
-            </thead>
-            <tbody>
-                {/* {feedback.map((item) => {
-                    return (
-                        <tr key={item.id}>
-                            <td>{item.feeling}</td>
-                            <td>{item.understanding}</td>
-                            <td>{item.support}</td>
-                            <td>{item.comments}</td>
-                            <td>{item.flagged}</td>
-                        </tr>
-                    )
-                })} */}
-                {feedback.map(item => (
-                    <AdminItem
-                        key={item.id}
-                        item={item}
-                        updateFlagged={updateFlagged}
-                        deleteFeedback={deleteFeedback}
-                    />
-                ))}
-            </tbody>
-        </table>
+        <>
+            <h1>Feedback Results</h1>
+            <table cellSpacing={0} className='table'>
+                <thead>
+                    <tr>
+                        <th>Feeling</th>
+                        <th>Understanding</th>
+                        <th>Support</th>
+                        <th>Comments</th>
+                        <th>Needs Review</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {feedback.map(item => (
+                        <AdminItem
+                            key={item.id}
+                            item={item}
+                            updateFlagged={updateFlagged}
+                            deleteFeedback={deleteFeedback}
+                        />
+                    ))}
+                </tbody>
+            </table>
+        </>
+
     );
 }
 

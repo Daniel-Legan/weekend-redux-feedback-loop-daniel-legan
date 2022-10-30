@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from "react-router-dom";
 import axios from 'axios';
+import Header from '../Header/Header';
 
 function Review() {
     const history = useHistory();
@@ -51,22 +52,24 @@ function Review() {
 
     return (
         <>
-            <h2>Review Your Feedback</h2>
-            <h3>Feeling: {feeling}</h3>
-            <h3>Understanding: {understanding}</h3>
-            <h3>Support: {support}</h3>
-            <h3>Comment: {comments}</h3>
-            <div>
-                <button onClick={(evt) => handleFeedback(evt)}>SUBMIT</button>
-                {/* todo: update global state instead of link to home */}
-                <Link to='/comments'>
-                    <button>BACK</button>
-                </Link>
-            </div>
-            <br />
-            <div>
-                <button onClick={handleReset}>RESET SURVEY</button>
-            </div>
+            <Header />
+            <section>
+                <h2><u>Review Your Feedback</u></h2>
+                <h3>Feeling: {feeling}</h3>
+                <h3>Understanding: {understanding}</h3>
+                <h3>Support: {support}</h3>
+                <h3>Comments: {comments}</h3>
+                <div>
+                    <button class="reviewPageButtons" onClick={(evt) => handleFeedback(evt)}>SUBMIT</button>
+                    <Link to='/comments'>
+                        <button>BACK</button>
+                    </Link>
+                </div>
+                <br />
+                <div>
+                    <button class="reviewPageButtons" onClick={handleReset}>RESET SURVEY</button>
+                </div>
+            </section>
         </>
     );
 }

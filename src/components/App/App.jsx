@@ -43,7 +43,7 @@ function App() {
         <Route exact path="/admin">
           <Admin />
         </Route>
-        
+
       </div>
     </Router>
   );
