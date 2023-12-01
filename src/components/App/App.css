@@ -50,7 +50,8 @@ table {
   padding: 20px;
 }
 
-button {
+button,
+button[type='submit'] {
   margin-left: 10px;
   border: none;
   background: #033076;
